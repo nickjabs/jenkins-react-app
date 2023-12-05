@@ -26,20 +26,13 @@ pipeline {
         }
 
         stage('Deploy to EC2') {
-    steps {
-        script {
-            // Erstelle das .ssh-Verzeichnis, wenn es nicht existiert
-            sh 'mkdir -p ~/.ssh'
-
-            // Hinzufügen des EC2-Host-Keys
-            sh 'ssh-keyscan -H 3.79.229.174 >> ~/.ssh/known_hosts'
-
-            // Starte den Container auf der EC2-Instanz mit Port-Mapping
-            sh 'ssh ubuntu@3.79.229.174 "docker run -d --name test -p 80:80 jenkins-react-app:v1.0.0"'
+            steps {
+                script {
+                    // Starte den Container auf der EC2-Instanz mit Port-Mapping
+                    sh 'ssh ubuntu@3.79.229.174 "docker run -d --name test -p 80:80 jenkins-react-app:v1.0.0"'           
+                }
+            }
         }
-    }
-}
-
 
         stage('Cleanup') {
             steps {
