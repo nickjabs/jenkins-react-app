@@ -9,10 +9,13 @@ node {
     sh 'docker exec node npm --version'
     sh 'docker exec node ls -la'
     sh 'docker exec node npm ci'
-    sh 'echo "YOUR COMMANDS HERE!"'
     sh 'docker exec node npm run build' // Hier wird der Build der React-App ausgeführt
     sh 'docker kill node'
+    
+    // Build des Docker-Images nach dem React-Build
+    sh 'docker build -t jenkins-react-app:latest .'
   }
+
   stage('Cleanup') {
     // Use the Git plugin to checkout the code
     deleteDir()
