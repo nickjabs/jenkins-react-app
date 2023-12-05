@@ -13,7 +13,8 @@ node {
     sh 'docker kill node'
     
     // Build des Docker-Images nach dem React-Build
-    sh 'docker build -t jenkins-react-app:latest .'
+    sh 'docker build -t jenkins-react-app:latest -f Dockerfile .'
+
   }
 
   stage('Cleanup') {
