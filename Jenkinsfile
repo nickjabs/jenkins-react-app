@@ -25,6 +25,13 @@ pipeline {
             }
         }
 
+        stage('Start App') {
+            steps {
+                // Starte den Container auf der EC2-Instanz mit Port-Mapping
+                sh 'docker run -d --name test -p 80:80 jenkins-react-app:v1.0.0'
+            }
+        }
+
         stage('Cleanup') {
             steps {
                 // Verzeichnis bereinigen
