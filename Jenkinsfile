@@ -25,15 +25,6 @@ pipeline {
             }
         }
 
-        stage('Deploy to EC2') {
-            steps {
-                script {
-                    // Starte den Container auf der EC2-Instanz mit Port-Mapping
-                    sh 'ssh ubuntu@3.79.229.174 "docker run -d --name test -p 80:80 jenkins-react-app:v1.0.0"'           
-                }
-            }
-        }
-
         stage('Cleanup') {
             steps {
                 // Verzeichnis bereinigen
