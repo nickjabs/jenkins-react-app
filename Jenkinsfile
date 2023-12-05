@@ -28,6 +28,9 @@ pipeline {
         stage('Deploy to EC2') {
     steps {
         script {
+            // Erstelle das .ssh-Verzeichnis, wenn es nicht existiert
+            sh 'mkdir -p ~/.ssh'
+
             // Hinzufügen des EC2-Host-Keys
             sh 'ssh-keyscan -H 3.79.229.174 >> ~/.ssh/known_hosts'
 
