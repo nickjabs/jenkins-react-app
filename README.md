@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<p>
+  🚀 Deploying a React App on AWS EC2 using Jenkins Pipeline with Docker 🛠️
+</p>
+<p>
+  This project showcases an automated pipeline using Jenkins to deploy a React application on AWS EC2 using Docker. The pipeline streamlines the build, Docker image creation, and deployment processes, simplifying the management and deployment of your React app on the cloud.
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>🛠️ Jenkins React App Pipeline Overview 🚀</h2>
+<ul>
+  <li>Agent: Any</li>
+  <li>Stages: Checkout ➡️ Build ➡️ Build Docker Image ➡️ Start Application ➡️ Cleanup</li>
+</ul>
 
-## Available Scripts
+<h2>🌟 Pipeline Stages and Functionality 🌟</h2>
+<h3>Checkout:</h3>
+<ul>
+  <li>Fetches code from the master branch of your GitHub repository.</li>
+</ul>
 
-In the project directory, you can run:
+<h3>Build:</h3>
+<ul>
+  <li>Runs Docker containers for React build tasks.</li>
+  <li>Executes Node commands for npm versions, directory listings, dependency installation, and build execution.</li>
+  <li>Stops Docker container after the build is completed.</li>
+</ul>
 
-### `npm start`
+<h3>Build Docker Image:</h3>
+<ul>
+  <li>Creates a Docker image named jenkins-react-app:v1.0.0 using the provided Dockerfile.</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>Start Application:</h3>
+<ul>
+  <li>Initiates the Docker container named 'test' running the built image, exposed on port 80.</li>
+</ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>Cleanup:</h3>
+<ul>
+  <li>Deletes the Jenkins workspace directory to maintain cleanliness.</li>
+</ul>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p>
+  This Jenkins pipeline automates the deployment of your React application using Docker on AWS EC2. It effectively manages the build, image creation, and deployment processes, making deployment hassle-free while utilizing Jenkins, Docker, and AWS EC2 efficiently.
+</p>
